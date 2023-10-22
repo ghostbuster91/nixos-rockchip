@@ -72,7 +72,7 @@
             self.nixosModules.sdImageRockchipInstaller
             { rockchip.uBoot = value.uBoot; boot.kernelPackages = value.kernel; }
             # Cross-compiling the whole system is hard, install from caches or compile with emulation instead
-            # { nixpkgs.crossSystem.system = "aarch64-linux"; nixpkgs.system = system;}
+            { nixpkgs.crossSystem.system = "aarch64-linux"; nixpkgs.system = system;}
           ] ++ value.extraModules;
         }) (boards system);
 
